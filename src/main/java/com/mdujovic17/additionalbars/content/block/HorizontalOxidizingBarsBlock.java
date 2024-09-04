@@ -25,11 +25,6 @@ public class HorizontalOxidizingBarsBlock extends HorizontalPaneBlock implements
     }
 
     @Override
-    public boolean isRandomlyTicking(BlockState state) {
-        return WeatheringCopper.getNext(state.getBlock()).isPresent();
-    }
-
-    @Override
     public WeatherState getAge() {
         return this.state;
     }

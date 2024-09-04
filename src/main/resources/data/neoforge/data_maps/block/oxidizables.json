@@ -1,0 +1,40 @@
+{
+  "values": {
+    "additionalbars:copper_bars": {
+      "next_oxidation_stage": "additionalbars:exposed_copper_bars"
+    },
+    "additionalbars:exposed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:weathered_copper_bars"
+    },
+    "additionalbars:weathered_copper_bars": {
+      "next_oxidation_stage": "additionalbars:oxidized_copper_bars"
+    },
+    "additionalbars:crossed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:crossed_exposed_copper_bars"
+    },
+    "additionalbars:crossed_exposed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:crossed_weathered_copper_bars"
+    },
+    "additionalbars:crossed_weathered_copper_bars": {
+      "next_oxidation_stage": "additionalbars:crossed_oxidized_copper_bars"
+    },
+    "additionalbars:horizontal_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_exposed_copper_bars"
+    },
+    "additionalbars:horizontal_exposed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_weathered_copper_bars"
+    },
+    "additionalbars:horizontal_weathered_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_oxidized_copper_bars"
+    },
+    "additionalbars:horizontal_crossed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_crossed_exposed_copper_bars"
+    },
+    "additionalbars:horizontal_crossed_exposed_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_crossed_weathered_copper_bars"
+    },
+    "additionalbars:horizontal_crossed_weathered_copper_bars": {
+      "next_oxidation_stage": "additionalbars:horizontal_crossed_oxidized_copper_bars"
+    }
+  }
+}
