@@ -1,4 +1,6 @@
 {
-	"parent": "additionalbars:block/horizontal_pane_block",
-	"textures":{"texture": "additionalbars:block/iron_bars"}
+	"parent": "additionalbars:block/parent/td/horizontal/special/bot",
+	"textures": {
+		"texture": "minecraft:block/iron_bars"
+	}
 }

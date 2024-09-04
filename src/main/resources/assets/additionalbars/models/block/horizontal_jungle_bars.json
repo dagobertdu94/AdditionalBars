@@ -1,4 +1,6 @@
 {
-	"parent": "additionalbars:block/horizontal_pane_block",
-	"textures":{"texture": "additionalbars:block/jungle_bars"}
+	"parent": "additionalbars:block/parent/td/horizontal/bot",
+	"textures": {
+		"texture": "minecraft:block/jungle_planks"
+	}
 }

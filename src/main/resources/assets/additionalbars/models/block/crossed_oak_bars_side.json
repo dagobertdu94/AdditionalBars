@@ -1,6 +1,6 @@
 {
-    "parent": "additionalbars:block/bars_side",
+    "parent": "additionalbars:block/parent/td/crossed/side",
     "textures": {
-        "texture": "additionalbars:block/crossed_oak_bars"
+        "texture": "minecraft:block/oak_planks"
     }
 }
