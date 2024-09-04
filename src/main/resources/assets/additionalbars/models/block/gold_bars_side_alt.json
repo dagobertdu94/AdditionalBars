@@ -1,6 +1,5 @@
 {
     "parent": "additionalbars:block/parent/td/special/side_alt",
-    "rendertype": "cutout",
     "textures": {
         "particle": "additionalbars:block/gold_bars",
         "bars": "additionalbars:block/gold_bars",

@@ -1,6 +1,5 @@
 {
     "parent": "additionalbars:block/parent/td/special/post_ends",
-    "rendertype": "cutout",
     "textures": {
         "particle": "additionalbars:block/gold_bars",
         "edge": "additionalbars:block/gold_bars"
