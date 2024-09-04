@@ -80,12 +80,12 @@ public class ModItems
     public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_GOLD_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_gold_bars", ModBlocks.HORIZONTAL_CROSSED_GOLD_BARS);
     public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_IRON_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_iron_bars", ModBlocks.HORIZONTAL_CROSSED_IRON_BARS);
 
-    public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_copper_bars", ModBlocks.HORIZONTAL_UNAFFECTED_COPPER_BARS);
+    public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_copper_bars", ModBlocks.HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS);
     public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_EXPOSED_COPPER_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_exposed_copper_bars", ModBlocks.HORIZONTAL_CROSSED_EXPOSED_COPPER_BARS);
     public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_WEATHERED_COPPER_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_weathered_copper_bars", ModBlocks.HORIZONTAL_CROSSED_WEATHERED_COPPER_BARS);
     public static final DeferredItem<BlockItem> HORIZONTAL_CROSSED_OXIDIZED_COPPER_BARS = ITEMS.registerSimpleBlockItem("horizontal_crossed_oxidized_copper_bars", ModBlocks.HORIZONTAL_CROSSED_OXIDIZED_COPPER_BARS);
 
-    public static final DeferredItem<BlockItem> WAXED_HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS = ITEMS.registerSimpleBlockItem("waxed_horizontal_crossed_copper_bars", ModBlocks.WAXED_HORIZONTAL_UNAFFECTED_COPPER_BARS);
+    public static final DeferredItem<BlockItem> WAXED_HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS = ITEMS.registerSimpleBlockItem("waxed_horizontal_crossed_copper_bars", ModBlocks.WAXED_HORIZONTAL_CROSSED_UNAFFECTED_COPPER_BARS);
     public static final DeferredItem<BlockItem> WAXED_HORIZONTAL_CROSSED_EXPOSED_COPPER_BARS = ITEMS.registerSimpleBlockItem("waxed_horizontal_crossed_exposed_copper_bars", ModBlocks.WAXED_HORIZONTAL_CROSSED_EXPOSED_COPPER_BARS);
     public static final DeferredItem<BlockItem> WAXED_HORIZONTAL_CROSSED_WEATHERED_COPPER_BARS = ITEMS.registerSimpleBlockItem("waxed_horizontal_crossed_weathered_copper_bars", ModBlocks.WAXED_HORIZONTAL_CROSSED_WEATHERED_COPPER_BARS);
     public static final DeferredItem<BlockItem> WAXED_HORIZONTAL_CROSSED_OXIDIZED_COPPER_BARS = ITEMS.registerSimpleBlockItem("waxed_horizontal_crossed_oxidized_copper_bars", ModBlocks.WAXED_HORIZONTAL_CROSSED_OXIDIZED_COPPER_BARS);
