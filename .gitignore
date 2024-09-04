@@ -26,3 +26,4 @@ forge*changelog.txt
 logs
 .vscode
 /logs/
+./logs
