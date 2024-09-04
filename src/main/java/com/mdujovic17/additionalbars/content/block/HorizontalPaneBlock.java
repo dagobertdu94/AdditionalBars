@@ -1,8 +1,9 @@
-package com.gamma1772.additionalbars.content.block;
+package com.mdujovic17.additionalbars.content.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -22,12 +23,14 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /*
 * New Method for horizontal bars. Uses SlabBlock instead of regular block*/
+@ParametersAreNonnullByDefault
 public class HorizontalPaneBlock extends SlabBlock implements SimpleWaterloggedBlock {
 
 	protected ArrayList<BlockType> barsTypes = new ArrayList<>();
@@ -53,7 +56,7 @@ public class HorizontalPaneBlock extends SlabBlock implements SimpleWaterloggedB
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+	protected VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
 		SlabType slabType = state.getValue(TYPE);
 
 		return switch (slabType) {
@@ -80,9 +83,13 @@ public class HorizontalPaneBlock extends SlabBlock implements SimpleWaterloggedB
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, @org.jetbrains.annotations.Nullable BlockGetter getter, List<Component> tooltips, TooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
 		for ( BlockType type : barsTypes) {
-			tooltips.add(Component.translatable(type.getText().getString()).withStyle(type.getTextColor()));
+			tooltipComponents.add(Component.translatable(type.getText().getString()).withStyle(type.getTextColor()));
 		}
+	}
+
+	public void setBlockTypes(BlockType... types) {
+		barsTypes.addAll(List.of(types));
 	}
 }
