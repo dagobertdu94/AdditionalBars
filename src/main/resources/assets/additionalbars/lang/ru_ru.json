@@ -130,7 +130,6 @@
   "block.additionalbars.waxed_horizontal_crossed_weathered_copper_bars": "Вощёные горизонтальные решётчатые состаренные медные прутья",
   "block.additionalbars.waxed_horizontal_crossed_oxidized_copper_bars": "Вощёные горизонтальные решётчатые окисленные медные прутья",
 
-  "itemGroup.additionalBars": "Additional Bars",
-  "itemGroup.horizontaladditionalbars": "Additional Bars (Horizontal)"
+  "itemGroup.additionalbars.additionalbars": "Additional Bars"
 }
 
