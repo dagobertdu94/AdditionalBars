@@ -30,8 +30,8 @@ public class AdditionalBars
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ABBlocks.BLOCKS.register(modEventBus);
-        BarsTab.TABS.register(modEventBus);
         ABItems.ITEMS.register(modEventBus);
+        BarsTab.TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
