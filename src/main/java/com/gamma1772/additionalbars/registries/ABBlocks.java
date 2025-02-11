@@ -7,18 +7,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Properties;
 
 /**
  * @method createBarsBlock()
@@ -44,19 +39,20 @@ public class ABBlocks
     public BiMap<OxidizableBarsBlock, OxidizableBarsBlock> weatherableBlocksDecrease;
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AdditionalBars.MODID);
-    public static final RegistryObject<Block> GOLD_BARS                         = BLOCKS.register("gold_bars", () -> createBarsBlock(Material.METAL, MaterialColor.GOLD, SoundType.METAL, 5.0f, 6.0f, BarsType.REGULAR, BarsType.METAL));
-    public static final RegistryObject<Block> ACACIA_BARS                       = BLOCKS.register("acacia_bars", () -> createBarsBlock(Material.METAL, MaterialColor.WOOD, SoundType.METAL, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> BIRCH_BARS                        = BLOCKS.register("birch_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> JUNGLE_BARS                       = BLOCKS.register("jungle_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> OAK_BARS                          = BLOCKS.register("oak_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> DARK_OAK_BARS                     = BLOCKS.register("dark_oak_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> SPRUCE_BARS                       = BLOCKS.register("spruce_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> MANGROVE_BARS                     = BLOCKS.register("mangrove_bars", () -> createBarsBlock(Material.WOOD, MaterialColor.WOOD, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
-    public static final RegistryObject<Block> CRIMSON_BARS                      = BLOCKS.register("crimson_bars", () -> createBarsBlock(Material.NETHER_WOOD, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM, BarsType.REGULAR, BarsType.NETHER));
-    public static final RegistryObject<Block> WARPED_BARS                       = BLOCKS.register("warped_bars", () -> createBarsBlock(Material.NETHER_WOOD, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM, BarsType.REGULAR, BarsType.NETHER));
+    public static final RegistryObject<Block> GOLD_BARS                         = BLOCKS.register("gold_bars", () -> createBarsBlock(Blocks.GOLD_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.REGULAR, BarsType.METAL));
+    public static final RegistryObject<Block> ACACIA_BARS                       = BLOCKS.register("acacia_bars", () -> createBarsBlock(Blocks.ACACIA_PLANKS, SoundType.METAL, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> BIRCH_BARS                        = BLOCKS.register("birch_bars", () -> createBarsBlock(Blocks.BIRCH_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> JUNGLE_BARS                       = BLOCKS.register("jungle_bars", () -> createBarsBlock(Blocks.JUNGLE_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> OAK_BARS                          = BLOCKS.register("oak_bars", () -> createBarsBlock(Blocks.OAK_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> DARK_OAK_BARS                     = BLOCKS.register("dark_oak_bars", () -> createBarsBlock(Blocks.DARK_OAK_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> SPRUCE_BARS                       = BLOCKS.register("spruce_bars", () -> createBarsBlock(Blocks.SPRUCE_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> MANGROVE_BARS                     = BLOCKS.register("mangrove_bars", () -> createBarsBlock(Blocks.MANGROVE_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> CHERRY_BARS                     = BLOCKS.register("cherry_bars", () -> createBarsBlock(Blocks.CHERRY_PLANKS, SoundType.WOOD, 5.0f, 6.0f, BarsType.REGULAR, BarsType.WOOD));
+    public static final RegistryObject<Block> CRIMSON_BARS                      = BLOCKS.register("crimson_bars", () -> createBarsBlock(Blocks.CRIMSON_PLANKS, SoundType.NYLIUM, BarsType.REGULAR, BarsType.NETHER));
+    public static final RegistryObject<Block> WARPED_BARS                       = BLOCKS.register("warped_bars", () -> createBarsBlock(Blocks.WARPED_PLANKS, SoundType.NYLIUM, BarsType.REGULAR, BarsType.NETHER));
 
-    public static final RegistryObject<Block> CROSSED_IRON_BARS                 = BLOCKS.register("crossed_iron_bars", () -> createBarsBlock(Material.METAL, MaterialColor.METAL, SoundType.METAL, 5.0f, 6.0f, BarsType.CROSSED, BarsType.METAL));
-    public static final RegistryObject<Block> CROSSED_GOLD_BARS                 = BLOCKS.register("crossed_gold_bars", () -> createBarsBlock(Material.METAL, MaterialColor.GOLD, SoundType.METAL, 5.0f, 6.0f, BarsType.CROSSED, BarsType.METAL));
+    public static final RegistryObject<Block> CROSSED_IRON_BARS                 = BLOCKS.register("crossed_iron_bars", () -> createBarsBlock(Blocks.IRON_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.CROSSED, BarsType.METAL));
+    public static final RegistryObject<Block> CROSSED_GOLD_BARS                 = BLOCKS.register("crossed_gold_bars", () -> createBarsBlock(Blocks.GOLD_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.CROSSED, BarsType.METAL));
     public static final RegistryObject<Block> CROSSED_ACACIA_BARS               = BLOCKS.register("crossed_acacia_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> CROSSED_BIRCH_BARS                = BLOCKS.register("crossed_birch_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> CROSSED_JUNGLE_BARS               = BLOCKS.register("crossed_jungle_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
@@ -64,11 +60,12 @@ public class ABBlocks
     public static final RegistryObject<Block> CROSSED_DARK_OAK_BARS             = BLOCKS.register("crossed_dark_oak_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> CROSSED_SPRUCE_BARS               = BLOCKS.register("crossed_spruce_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> CROSSED_MANGROVE_BARS             = BLOCKS.register("crossed_mangrove_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
-    public static final RegistryObject<Block> CROSSED_CRIMSON_BARS              = BLOCKS.register("crossed_crimson_bars", () -> createBarsBlock(Material.NETHER_WOOD, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM, BarsType.CROSSED, BarsType.NETHER));
-    public static final RegistryObject<Block> CROSSED_WARPED_BARS               = BLOCKS.register("crossed_warped_bars", () -> createBarsBlock(Material.NETHER_WOOD, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM, BarsType.CROSSED, BarsType.NETHER));
+    public static final RegistryObject<Block> CROSSED_CHERRY_BARS               = BLOCKS.register("crossed_cherry_bars", () -> createBarsBlock(BarsType.CROSSED, BarsType.WOOD));
+    public static final RegistryObject<Block> CROSSED_CRIMSON_BARS              = BLOCKS.register("crossed_crimson_bars", () -> createBarsBlock(Blocks.CRIMSON_PLANKS, SoundType.NYLIUM, BarsType.CROSSED, BarsType.NETHER));
+    public static final RegistryObject<Block> CROSSED_WARPED_BARS               = BLOCKS.register("crossed_warped_bars", () -> createBarsBlock(Blocks.WARPED_PLANKS, SoundType.NYLIUM, BarsType.CROSSED, BarsType.NETHER));
 
-    public static final RegistryObject<Block> HORIZONTAL_IRON_BARS              = BLOCKS.register("horizontal_iron_bars", () -> createHorizontalBarsBlock(Material.METAL, MaterialColor.METAL, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.METAL));
-    public static final RegistryObject<Block> HORIZONTAL_GOLD_BARS              = BLOCKS.register("horizontal_gold_bars", () -> createHorizontalBarsBlock(Material.METAL, MaterialColor.GOLD, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.METAL));
+    public static final RegistryObject<Block> HORIZONTAL_IRON_BARS              = BLOCKS.register("horizontal_iron_bars", () -> createHorizontalBarsBlock(Blocks.IRON_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.METAL));
+    public static final RegistryObject<Block> HORIZONTAL_GOLD_BARS              = BLOCKS.register("horizontal_gold_bars", () -> createHorizontalBarsBlock(Blocks.GOLD_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.METAL));
     public static final RegistryObject<Block> HORIZONTAL_ACACIA_BARS            = BLOCKS.register("horizontal_acacia_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_BIRCH_BARS             = BLOCKS.register("horizontal_birch_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_JUNGLE_BARS            = BLOCKS.register("horizontal_jungle_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
@@ -76,11 +73,12 @@ public class ABBlocks
     public static final RegistryObject<Block> HORIZONTAL_DARK_OAK_BARS          = BLOCKS.register("horizontal_dark_oak_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_SPRUCE_BARS            = BLOCKS.register("horizontal_spruce_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_MANGROVE_BARS            = BLOCKS.register("horizontal_mangrove_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
-    public static final RegistryObject<Block> HORIZONTAL_CRIMSON_BARS           = BLOCKS.register("horizontal_crimson_bars", () -> createHorizontalBarsBlock(Material.NETHER_WOOD, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.NETHER));
-    public static final RegistryObject<Block> HORIZONTAL_WARPED_BARS            = BLOCKS.register("horizontal_warped_bars", () -> createHorizontalBarsBlock(Material.NETHER_WOOD, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.NETHER));
+    public static final RegistryObject<Block> HORIZONTAL_CHERRY_BARS            = BLOCKS.register("horizontal_cherry_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.WOOD));
+    public static final RegistryObject<Block> HORIZONTAL_CRIMSON_BARS           = BLOCKS.register("horizontal_crimson_bars", () -> createHorizontalBarsBlock(Blocks.CRIMSON_PLANKS, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.NETHER));
+    public static final RegistryObject<Block> HORIZONTAL_WARPED_BARS            = BLOCKS.register("horizontal_warped_bars", () -> createHorizontalBarsBlock(Blocks.WARPED_PLANKS, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.NETHER));
 
-    public static final RegistryObject<Block> HORIZONTAL_CROSSED_IRON_BARS      = BLOCKS.register("horizontal_crossed_iron_bars", () -> createHorizontalBarsBlock(Material.METAL, MaterialColor.METAL, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.METAL));
-    public static final RegistryObject<Block> HORIZONTAL_CROSSED_GOLD_BARS      = BLOCKS.register("horizontal_crossed_gold_bars", () -> createHorizontalBarsBlock(Material.METAL, MaterialColor.GOLD, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.METAL));
+    public static final RegistryObject<Block> HORIZONTAL_CROSSED_IRON_BARS      = BLOCKS.register("horizontal_crossed_iron_bars", () -> createHorizontalBarsBlock(Blocks.IRON_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.METAL));
+    public static final RegistryObject<Block> HORIZONTAL_CROSSED_GOLD_BARS      = BLOCKS.register("horizontal_crossed_gold_bars", () -> createHorizontalBarsBlock(Blocks.GOLD_BLOCK, SoundType.METAL, 5.0f, 6.0f, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.METAL));
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_ACACIA_BARS    = BLOCKS.register("horizontal_crossed_acacia_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_BIRCH_BARS     = BLOCKS.register("horizontal_crossed_birch_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_JUNGLE_BARS    = BLOCKS.register("horizontal_crossed_jungle_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
@@ -88,8 +86,9 @@ public class ABBlocks
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_DARK_OAK_BARS  = BLOCKS.register("horizontal_crossed_dark_oak_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_SPRUCE_BARS    = BLOCKS.register("horizontal_crossed_spruce_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
     public static final RegistryObject<Block> HORIZONTAL_CROSSED_MANGROVE_BARS    = BLOCKS.register("horizontal_crossed_mangrove_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
-    public static final RegistryObject<Block> HORIZONTAL_CROSSED_CRIMSON_BARS   = BLOCKS.register("horizontal_crossed_crimson_bars", () -> createHorizontalBarsBlock(Material.NETHER_WOOD, MaterialColor.CRIMSON_NYLIUM, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.NETHER));
-    public static final RegistryObject<Block> HORIZONTAL_CROSSED_WARPED_BARS    = BLOCKS.register("horizontal_crossed_warped_bars", () -> createHorizontalBarsBlock(Material.NETHER_WOOD, MaterialColor.WARPED_NYLIUM, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.NETHER));
+    public static final RegistryObject<Block> HORIZONTAL_CROSSED_CHERRY_BARS    = BLOCKS.register("horizontal_crossed_cherry_bars", () -> createHorizontalBarsBlock(BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.WOOD));
+    public static final RegistryObject<Block> HORIZONTAL_CROSSED_CRIMSON_BARS   = BLOCKS.register("horizontal_crossed_crimson_bars", () -> createHorizontalBarsBlock(Blocks.CRIMSON_PLANKS, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.NETHER));
+    public static final RegistryObject<Block> HORIZONTAL_CROSSED_WARPED_BARS    = BLOCKS.register("horizontal_crossed_warped_bars", () -> createHorizontalBarsBlock(Blocks.WARPED_PLANKS, SoundType.NYLIUM, BarsType.HORIZONTAL, BarsType.CROSSED, BarsType.NETHER));
 
     public static final RegistryObject<OxidizableBarsBlock> OXIDIZED_COPPER_BARS = BLOCKS.register("oxidized_copper_bars", () -> createCopperBars(WeatherState.OXIDIZED, false, BarsType.REGULAR, BarsType.METAL, BarsType.OXIDIZING));
     public static final RegistryObject<OxidizableBarsBlock> WEATHERED_COPPER_BARS = BLOCKS.register("weathered_copper_bars", () -> createCopperBars(WeatherState.WEATHERED, true, BarsType.REGULAR, BarsType.METAL, BarsType.OXIDIZING));
@@ -140,83 +139,83 @@ public class ABBlocks
 //    }
 
     private static BasicBarsBlock createBarsBlock(BlockType... types) {
-        return new BasicBarsBlock(Block.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).requiresCorrectToolForDrops().strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+        return new BasicBarsBlock(Block.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).requiresCorrectToolForDrops().strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
-    private static BasicBarsBlock createBarsBlock(Material material, MaterialColor color, SoundType sound, BlockType... types) {
-        return new BasicBarsBlock(Block.Properties.of(material, color).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+    private static BasicBarsBlock createBarsBlock(Block copy, SoundType sound, BlockType... types) {
+        return new BasicBarsBlock(Block.Properties.copy(copy).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
-    private static BasicBarsBlock createBarsBlock(Material material, MaterialColor color, SoundType sound, float hardness, float resistance, BlockType... types) {
-        return new BasicBarsBlock(Block.Properties.of(material, color).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+    private static BasicBarsBlock createBarsBlock(Block copy, SoundType sound, float hardness, float resistance, BlockType... types) {
+        return new BasicBarsBlock(Block.Properties.copy(copy).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
     private static HorizontalPaneBlock createHorizontalBarsBlock(BlockType... types) {
-        return new HorizontalPaneBlock(Block.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+        return new HorizontalPaneBlock(Block.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
-    private static HorizontalPaneBlock createHorizontalBarsBlock(Material material, MaterialColor color, SoundType sound, BlockType... types) {
-        return new HorizontalPaneBlock(Block.Properties.of(material, color).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+    private static HorizontalPaneBlock createHorizontalBarsBlock(Block copy, SoundType sound, BlockType... types) {
+        return new HorizontalPaneBlock(Block.Properties.copy(copy).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
-    private static HorizontalPaneBlock createHorizontalBarsBlock(Material material, MaterialColor color, SoundType sound, float hardness, float resistance, BlockType... types) {
-        return new HorizontalPaneBlock(Block.Properties.of(material, color).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+    private static HorizontalPaneBlock createHorizontalBarsBlock(Block copy, SoundType sound, float hardness, float resistance, BlockType... types) {
+        return new HorizontalPaneBlock(Block.Properties.copy(copy).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
     private static OxidizableBarsBlock createCopperBars(WeatherState state, boolean ticksRandomly, BlockType... types) {
         if (ticksRandomly)
-            return new OxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks(), types);
+            return new OxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks(), types);
         else
-            return new OxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+            return new OxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
     public static WaxedBarsBlock createWaxedBars(OxidizableBarsBlock oxidizableBlock, BlockType... types) {
-        return new WaxedBarsBlock(Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), oxidizableBlock, types);
+        return new WaxedBarsBlock(Block.Properties.copy(Blocks.WAXED_COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), oxidizableBlock, types);
     }
 
     private static HorizontalOxidizableBarsBlock createHorizontalCopperBars(WeatherState state, boolean ticksRandomly, BlockType... types) {
         if (ticksRandomly)
-            return new HorizontalOxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks(), types);
+            return new HorizontalOxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks(), types);
         else
-            return new HorizontalOxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
+            return new HorizontalOxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), types);
     }
 
     private static BasicBarsBlock createBarsBlock() {
-        return new BasicBarsBlock(Block.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).requiresCorrectToolForDrops().strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), BarsType.REGULAR);
+        return new BasicBarsBlock(Block.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).requiresCorrectToolForDrops().strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never), BarsType.REGULAR);
     }
 
-    private static BasicBarsBlock createBarsBlock(Material material, MaterialColor color, SoundType sound) {
-        return new BasicBarsBlock(Block.Properties.of(material, color).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+    private static BasicBarsBlock createBarsBlock(Block copy, SoundType sound) {
+        return new BasicBarsBlock(Block.Properties.copy(copy).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
-    private static BasicBarsBlock createBarsBlock(Material material, MaterialColor color, SoundType sound, float hardness, float resistance) {
-        return new BasicBarsBlock(Block.Properties.of(material, color).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+    private static BasicBarsBlock createBarsBlock(Block copy, SoundType sound, float hardness, float resistance) {
+        return new BasicBarsBlock(Block.Properties.copy(copy).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
     private static HorizontalPaneBlock createHorizontalBarsBlock() {
-        return new HorizontalPaneBlock(Block.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+        return new HorizontalPaneBlock(Block.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).strength(3.0F, 4.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
-    private static HorizontalPaneBlock createHorizontalBarsBlock(Material material, MaterialColor color, SoundType sound) {
-        return new HorizontalPaneBlock(Block.Properties.of(material, color).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+    private static HorizontalPaneBlock createHorizontalBarsBlock(Block copy, SoundType sound) {
+        return new HorizontalPaneBlock(Block.Properties.copy(copy).sound(sound).strength(3.0f, 4.0f).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
-    private static HorizontalPaneBlock createHorizontalBarsBlock(Material material, MaterialColor color, SoundType sound, float hardness, float resistance) {
-        return new HorizontalPaneBlock(Block.Properties.of(material, color).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+    private static HorizontalPaneBlock createHorizontalBarsBlock(Block copy, SoundType sound, float hardness, float resistance) {
+        return new HorizontalPaneBlock(Block.Properties.copy(copy).sound(sound).strength(hardness, resistance).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
     private static OxidizableBarsBlock createCopperBars(WeatherState state, boolean ticksRandomly) {
         if (ticksRandomly)
-            return new OxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks());
+            return new OxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks());
         else
-            return new OxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+            return new OxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
     private static HorizontalOxidizableBarsBlock createHorizontalCopperBars(WeatherState state, boolean ticksRandomly) {
         if (ticksRandomly)
-            return new HorizontalOxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks());
+            return new HorizontalOxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never).randomTicks());
         else
-            return new HorizontalOxidizableBarsBlock(state, Block.Properties.of(Material.METAL, MaterialColor.METAL).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
+            return new HorizontalOxidizableBarsBlock(state, Block.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.COPPER).strength(5.0F, 6.0F).noOcclusion().isValidSpawn(ABBlocks::never).isViewBlocking(ABBlocks::never).isSuffocating(ABBlocks::never).isRedstoneConductor(ABBlocks::never));
     }
 
     private static Boolean never(BlockState blockState, BlockGetter blockView, BlockPos blockPos, EntityType<?> entityType) { return false; }

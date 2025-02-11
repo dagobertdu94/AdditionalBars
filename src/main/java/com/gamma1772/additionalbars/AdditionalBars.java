@@ -3,8 +3,7 @@ package com.gamma1772.additionalbars;
 import com.gamma1772.additionalbars.content.block.OxidizableBarsBlock;
 import com.gamma1772.additionalbars.registries.ABBlocks;
 import com.gamma1772.additionalbars.registries.ABItems;
-import com.gamma1772.additionalbars.tabs.CreativeGroup;
-import com.gamma1772.additionalbars.tabs.HorizontalCreativeGroup;
+import com.gamma1772.additionalbars.tabs.BarsTab;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,16 +24,13 @@ public class AdditionalBars
 {
     public static final String MODID = "additionalbars";
     public static final Logger LOGGER = LogManager.getLogger();
-
-    public static final CreativeModeTab ADDITIONAL_BARS = new CreativeGroup("additionalBars");
-    public static final CreativeModeTab HORIZONTAL_ADDITIONAL_BARS = new HorizontalCreativeGroup("horizontaladditionalbars");
-
+    
     public AdditionalBars()
     {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ABBlocks.BLOCKS.register(modEventBus);
-
+        BarsTab.TABS.register(modEventBus);
         ABItems.ITEMS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
