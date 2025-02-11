@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This is an example mods.toml file. It contains the data relating to the loading mods.
 # There are several mandatory fields (#mandatory), and many more that are optional (#optional).
 # The overall format is standard TOML format, v0.5.0.
@@ -72,35 +71,3 @@ description='''${mod_description}'''
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
-=======
-license="MIT"
-modLoader="javafml" #mandatory
-loaderVersion="[41,)" #mandatory
-issueTrackerURL="https://github.com/CodenameRevy/AdditionalBars/issues" #optional
-
-[[mods]] #mandatory
-modId="additionalbars" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="Additional Bars" #mandatory
-displayURL="gamma1772.github.io" #optional
-logoFile="logo.png" #optional
-credits='''Gamma1772 (Mod Developer), ruchom4u (Spanish Translations), fantasyair18 (Chinese Traditional (Taiwan) Translations), TheDirectorX, BardinTheDwarf (Russian Translations), Zijuna (German Translations), justmonika (Simple Chinese Translations), mindy15963 (Korean Translations), WadeMason''' #optional
-authors="Gamma1772" #optional
-description='''
-This mod adds additional bars to the game that go along with Iron Bars!
-'''
-
-[[dependencies.additionalbars]] #optional
-    modId="forge" #mandatory
-    mandatory=true #mandatory
-    versionRange="[41,)" #mandatory
-    ordering="NONE"
-    side="BOTH"
-
-[[dependencies.additionalbars]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.19,)"
-    ordering="NONE"
-    side="BOTH"
->>>>>>> branch '1.19' of git@github.com:dagobertdu94/AdditionalBars.git

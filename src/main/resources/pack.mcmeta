@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "pack": {
     "description": {
       "text": "${mod_id} resources"
@@ -7,11 +6,3 @@
     "pack_format": 15
   }
 }
-=======
-    "pack": {
-        "description": "additionalbars resources",
-        "pack_format": 9,
-        "_comment": "Additional Bars Resources"
-    }
-}
->>>>>>> branch '1.19' of git@github.com:dagobertdu94/AdditionalBars.git
