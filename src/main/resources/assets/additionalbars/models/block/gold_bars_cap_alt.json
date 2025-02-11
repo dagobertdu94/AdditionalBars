@@ -1,0 +1,8 @@
+{
+    "parent": "additionalbars:block/parent/td/special/cap_alt",
+    "textures": {
+        "particle": "additionalbars:block/gold_bars",
+        "bars": "additionalbars:block/gold_bars",
+        "edge": "additionalbars:block/gold_bars"
+    }
+}
